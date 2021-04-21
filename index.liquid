@@ -1,0 +1,93 @@
+---
+layout: base
+class: home
+---
+
+
+<section class='home-about home-section'>
+    <h2 style="--rows: {{collections.aboutByYear | size}}">
+        <span>
+            About 
+        </span>
+    </h2>
+    <ul class='project-list'>
+        {% for year in collections.aboutByYear %}
+        <span class="project-date" style="grid-row: span {{year.posts | size}}">
+            <span>
+                {{year.shortYear}}
+            </span>
+        </span>
+        {% assign posts = year.posts | reverse%}
+        {% for p in posts%}
+        <li class='project-list-item'>
+            <h3 class="project-title">
+                <a href='{{ p.url }}'>
+                    {{p.data.title}}
+                </a>
+            </h3>
+            <span class="project-category">{{p.data.category}}</span>
+        </li>
+        {% endfor %}
+        {% endfor %}
+    </ul>
+</section>
+<div class="spacer"></div>
+
+
+<section class='home-work home-section'>
+    <h2 style="--rows: {{collections.work | size}}">
+        <span>
+            Artworks. 
+        </span>
+    </h2>
+    <ul class='project-list'>
+        {% for year in collections.workByYear %}
+        <span class="project-date" style="grid-row: span {{year.posts | size}}">
+            <span>
+                {{year.shortYear}}
+            </span>
+        </span>
+        {% assign posts = year.posts | reverse%}
+        {% for p in posts%}
+        <li class='project-list-item'>
+            <h3 class="project-title">
+                <a href='{{ p.url }}'>
+                    {{p.data.title}}
+                </a>
+            </h3>
+            <span class="project-category">{{p.data.category}}</span>
+        </li>
+        {% endfor %}
+        {% endfor %}
+    </ul>
+</section>
+<div class="spacer"></div>
+<section class='home-writing home-section'>
+    <h2 style="--rows: {{collections.post | size}}">
+        <span>Writing</span>
+    </h2>
+    <nav class='project-list'>
+        {% for year in collections.postsByYear %}
+        <span class="project-date" style="grid-row: span {{year.posts | size}}">
+            <span>
+                {{year.shortYear}}
+            </span>
+        </span>
+        {% assign posts = year.posts | reverse %}
+        {% for post in posts %}
+        <li class='project-list-item'>
+            <h3 class="project-title">
+                <a href="{{ post.url }}">
+                    {% if post.data.shortTitle %}
+                    {{ post.data.shortTitle }}
+                    {% else %}
+                    {{ post.data.title }}
+                    {% endif %}
+                </a>
+            </h3>
+            <span class="project-category">{{post.data.publication}}</span>
+        </li>
+        {% endfor %}
+        {% endfor %}
+    </nav>
+</section>

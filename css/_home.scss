@@ -1,0 +1,60 @@
+
+.preview-list-item {
+  display: contents;
+  font-weight: 400;
+
+  .project-title {
+    grid-column: 2 / 12;
+    padding-bottom: .1em;
+    @include bp(m) {
+      grid-column: 5 / 9;
+    }
+    @include bp(xl) {
+      grid-column: 5 / 8;
+    }
+
+  }
+  .project-category {
+    display: none;
+    @include bp(m) {
+      display: block;
+      grid-column: 10 / 12;
+    }
+    @include bp(xl) {
+      grid-column: 10 / 12;
+    }
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.home-preview {
+  display: contents;
+  h2 {
+    grid-column: 2 / 13;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    font-family: $sans;
+    grid-row: span 1;
+    span {
+      position: sticky;
+      top: 1em;
+      display: block;
+    }
+    @include bp(m) {
+      grid-row: span var(--rows);
+      font-weight: 400;
+      padding-top: 0;
+      padding-bottom: 0;
+      grid-column: 2 / 4;
+    }
+  }
+}

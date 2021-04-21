@@ -1,0 +1,8 @@
+_site/
+.sass-cache/
+node_modules
+aws-keys.json
+tmp/
+.jekyll-cache/
+/_includes/style.css
+yarn-error.log

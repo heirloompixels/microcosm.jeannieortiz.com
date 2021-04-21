@@ -1,0 +1,32 @@
+<footer class="site-footer">
+
+	<a href="/" alt="main menu"><strong>Return to Main Menu</strong></a>
+<br/><br/><br/><br/><br/><br/>
+
+	<form action="https://tinyletter.com/intentionallyconfusing" method="post" class="newsletter-form" target="popupwindow"
+		onsubmit="window.open('https://tinyletter.com/intentionallyconfusing', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+		{% if tags contains "post" %}
+		<label for="tlemail">Subscribe for more stories</label>
+		{% else %}
+		<label for="tlemail">Subscribe for updates</label>
+		{% endif %}
+		<div>
+			<input type="text" class="email" placeholder="you@email.com" name="email" id="tlemail" />
+			<input type="hidden" value="1" name="embed" />
+			<input type="submit" class="submit" value="Subscribe" />
+		</div>
+	</form>
+	<span class='build'>Site built {{ 'now' | date: "%B %e, %Y at %H:%M" }}</span>
+	<span class='footer-copyright'>
+		<a href="https://instagram.com/kyleparkercunningham">Instagram</a>
+		<a href="https://intentionallyconfusing.com/">Intentionally Confusing</a>
+		<a href="https://tinyletter.com/intentionallyconfusing">Newsletter</a>
+		<a href="/feed.xml">RSS</a>
+		<a href="/pgp.txt">PGP</a>
+		<a href="/contact/">Contact</a>
+		<a href="/colophon/">Colophon</a>
+		© 2004–{{'now' | date: "%Y"}}
+	</span>
+</footer>
+
+<script src="{{'/dist/main.js' | url}}"></script>
