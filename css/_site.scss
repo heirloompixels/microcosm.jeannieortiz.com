@@ -5,7 +5,7 @@
   font-family: $sans;
   max-width: 34em;
   letter-spacing: 0.012em;
-  display: flex;
+  //display: flex; TODO: learn flex sizing
   line-height: 1.2;
   align-items: flex-start;
   a {
@@ -21,6 +21,7 @@
   }
   @include bp(l) {
     grid-column: 5 / 10;
+    grid-column: 2 / 10;
   }
 }
 
